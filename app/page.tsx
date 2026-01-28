@@ -21,7 +21,14 @@ import {
   Megaphone,
   TrendingUp,
   Users,
+  Download,
 } from "lucide-react";
+import DarkModeToggle from "./components/DarkModeToggle";
+import Testimonials from "./components/Testimonials";
+import ContactForm from "./components/ContactForm";
+import Certifications from "./components/Certifications";
+import ScrollToTop from "./components/ScrollToTop";
+import FloatingCTA from "./components/FloatingCTA";
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("technical");
@@ -109,15 +116,15 @@ export default function Portfolio() {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`text-sm tracking-wide transition-all duration-300 ${
-                  activeSection === item.id
-                    ? "text-foreground font-medium"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`text-sm tracking-wide transition-all duration-300 ${activeSection === item.id
+                  ? "text-foreground font-medium"
+                  : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {item.label}
               </a>
             ))}
+            <DarkModeToggle />
             <a
               href="#contact"
               className="px-6 py-2.5 bg-foreground text-background rounded-full text-sm font-medium hover:bg-foreground/90 transition-all hover:scale-105 active:scale-95"
@@ -171,6 +178,14 @@ export default function Portfolio() {
               >
                 Get In Touch
               </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="px-8 py-4 border border-border rounded-full font-medium hover:bg-muted/50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Resume
+              </a>
             </div>
 
             <div className="flex gap-4">
@@ -205,7 +220,7 @@ export default function Portfolio() {
 
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-xs text-muted-foreground uppercase tracking-[0.2em]">
-        
+
           </span>
           <div className="w-px h-12 bg-gradient-to-b from-foreground/30 to-transparent" />
         </div>
@@ -262,7 +277,7 @@ export default function Portfolio() {
               skills={["Flutter", "Python", "Node.js", "MongoDB"]}
               icon={<Database className="w-5 h-5" />}
             />
-    
+
             <ExperienceCard
               period="2023 — 2024"
               role="Full-Stack Developer"
@@ -289,7 +304,10 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
-      
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
       {/* Services Section */}
       <section id="work" className="relative py-32 px-6 lg:px-24 bg-muted/30">
         <div className="max-w-7xl mx-auto">
@@ -448,11 +466,10 @@ export default function Portfolio() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   type="button"
-                  className={`px-8 py-3 rounded-full capitalize transition-all font-medium text-sm ${
-                    activeTab === tab
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`px-8 py-3 rounded-full capitalize transition-all font-medium text-sm ${activeTab === tab
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {tab}
                 </button>
@@ -492,29 +509,28 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Certifications Section */}
+      <Certifications />
+
+      {/* Contact Section */}
       <section id="contact" className="relative py-40 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-sm text-primary font-medium tracking-[0.2em] uppercase">
-            {"Let's Collaborate"}
-          </span>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-sm text-primary font-medium tracking-[0.2em] uppercase">
+              {"Let's Collaborate"}
+            </span>
 
-          <h2 className="font-serif text-4xl md:text-7xl font-bold mt-6 mb-8 leading-tight text-balance">
-            Ready to build something{" "}
-            <span className="text-primary">extraordinary?</span>
-          </h2>
+            <h2 className="font-serif text-4xl md:text-7xl font-bold mt-6 mb-8 leading-tight text-balance">
+              Ready to build something{" "}
+              <span className="text-primary">extraordinary?</span>
+            </h2>
 
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            {"Let's turn your vision into reality. Available for freelance projects, collaborations, and full-time opportunities."}
-          </p>
+            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+              {"Let's turn your vision into reality. Fill out the form below or email me directly at ramkantharia4@gmail.com"}
+            </p>
+          </div>
 
-          <a
-            href="mailto:ram@gmail.com"
-            className="group inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background rounded-full text-lg font-medium hover:bg-foreground/90 transition-all hover:scale-105 active:scale-95"
-          >
-            Start a Conversation
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          <ContactForm />
         </div>
       </section>
 
@@ -553,6 +569,10 @@ export default function Portfolio() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Components */}
+      <ScrollToTop />
+      <FloatingCTA />
     </div>
   );
 }
@@ -687,9 +707,8 @@ function ProjectShowcase({
 }: ProjectShowcaseProps) {
   return (
     <div
-      className={`flex flex-col ${
-        align === "right" ? "md:flex-row-reverse" : "md:flex-row"
-      } gap-12 items-center`}
+      className={`flex flex-col ${align === "right" ? "md:flex-row-reverse" : "md:flex-row"
+        } gap-12 items-center`}
     >
       <div className="flex-1">
         <div className="font-serif text-7xl font-bold text-muted/50 mb-4">
