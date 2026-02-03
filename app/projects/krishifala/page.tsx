@@ -44,7 +44,7 @@ export default function Page() {
 
           <div className="aspect-video rounded-2xl border border-border overflow-hidden mb-20">
             <img 
-              src="/images/project-krishifala.jpg" 
+              src="/images/Krishifala.jpeg" 
               alt="Krishifala Platform"
               className="w-full h-full object-cover"
             />

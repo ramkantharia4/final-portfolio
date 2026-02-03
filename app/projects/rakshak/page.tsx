@@ -44,7 +44,7 @@ export default function Page() {
 
           <div className="aspect-video rounded-2xl border border-border overflow-hidden mb-20 bg-muted/30">
             <img 
-              src="/images/project-rakshak.jpg" 
+              src="/images/rakshak.jpeg" 
               alt="Rakshak App"
               className="w-full h-full object-cover"
             />

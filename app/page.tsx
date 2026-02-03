@@ -179,7 +179,7 @@ export default function Portfolio() {
                 Get In Touch
               </a>
               <a
-                href="/resume.pdf"
+                href="components/resumee.pdf"
                 download
                 className="px-8 py-4 border border-border rounded-full font-medium hover:bg-muted/50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
               >
@@ -251,9 +251,19 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="space-y-0">
+         <div className="space-y-0">
             <ExperienceCard
-              period="2025 — Present"
+              period="2026 — Present"
+              role="Full Stack Developer"
+              company="Roamly"
+              companyUrl="/projects/roamly"
+              description="An intelligent travel companion that adapts to reality, unifying planning with dynamic itineraries, smart group collaboration, intelligent expense tracking, and real-time adjustments that respond to actual travel behavior."
+              skills={["Flutter", "Firebase", "Node.js", "MongoDB", "WebSockets"]}
+              icon={<Megaphone className="w-5 h-5" />}
+            />
+
+            <ExperienceCard
+              period="2025"
               role="Founder & CEO"
               company="YODA"
               companyUrl="https://yoda.agency"
@@ -268,12 +278,13 @@ export default function Portfolio() {
               ]}
               icon={<Megaphone className="w-5 h-5" />}
             />
+          
             <ExperienceCard
               period="2024 — 2025"
               role="App Developer"
               company="Rakshak"
               companyUrl="/projects/rakshak"
-              description="An App which helsps a person during an accident, allows then to share their location to emergency contacts, police stations, firestation, hospitals, also detecting automatically weather the person is in an accident or are they sleeping or not with the help of AI"
+              description="An App which helps a person during an accident, allows them to share their location to emergency contacts, police stations, firestation, hospitals, also detecting automatically whether the person is in an accident or are they sleeping or not with the help of AI"
               skills={["Flutter", "Python", "Node.js", "MongoDB"]}
               icon={<Database className="w-5 h-5" />}
             />
@@ -438,6 +449,23 @@ export default function Portfolio() {
               image="/images/project-rakshak.jpg"
               projectUrl="/projects/rakshak"
               align="right"
+            />
+
+            <ProjectShowcase
+              number="05"
+              title="Roamly"
+              subtitle="Travel smart"
+              tags={["Flutter", "Python", "Node.js", "Firebase"]}
+              description="An intelligent travel companion that adapts to reality, unifies planning, and makes group trips effortless with dynamic itineraries that adjust to your actual travel behavior"
+              features={[
+                "Reality-aware itineraries",
+                "Smart group collaboration",
+                "Intelligent expense tracking",
+                "Memory timeline creation"
+              ]}
+              image="/images/roamly_cp.png"
+              projectUrl="/projects/roamly"
+              align="left"
             />
           </div>
         </div>

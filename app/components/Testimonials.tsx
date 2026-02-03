@@ -20,8 +20,8 @@ const testimonials: Testimonial[] = [
     {
         name: "Arjun Patel",
         role: "Founder",
-        company: "GreenFarms Co.",
-        content: "Working with Ram on Krishifala was a game-changer for our agricultural business. The AI-powered features he implemented have helped thousands of farmers improve their yields.",
+        company: "SafeDrive Solutions",
+        content: "Working with Ram on Rakshak was a game-changer for our Driving and Security business. The AI-powered features he implemented have helped saving lives of many drivers already.",
         rating: 5,
     },
     {
@@ -34,8 +34,8 @@ const testimonials: Testimonial[] = [
     {
         name: "Vikram Singh",
         role: "CTO",
-        company: "SafeDrive Solutions",
-        content: "The Rakshak app Ram developed is innovative and potentially life-saving. His ability to integrate complex AI features while maintaining a clean UX is impressive.",
+        company: "T2 Labs",
+        content: "Finally, a travel app that adapts to reality instead of making me stick to a rigid schedule! The energy-based planning is genius—I chose 'Balanced' for our Rajasthan trip and it perfectly mixed sightseeing with rest breaks. Group expense tracking saved us from awkward money conversations. Game changer for modern travelers!",
         rating: 5,
     },
 ];

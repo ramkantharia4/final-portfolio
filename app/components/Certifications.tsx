@@ -46,9 +46,9 @@ const certifications: Certification[] = [
         color: "text-red-500",
     },
     {
-        title: "Hackathon Winner - AgriTech",
-        issuer: "TechFest 2024",
-        year: "2024",
+        title: "Hackathon Finalist - Roamly",
+        issuer: "Code-a-thon 2026",
+        year: "2026",
         icon: <Award className="w-6 h-6" />,
         color: "text-yellow-500",
     },
