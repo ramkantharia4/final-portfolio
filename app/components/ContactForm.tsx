@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -16,30 +17,38 @@ export default function ContactForm() {
         setStatus("loading");
 
         try {
-            // Using Web3Forms - free form submission service
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // User needs to replace this
+            const { error } = await supabase.from("contacts").insert([
+                {
                     name: formData.name,
                     email: formData.email,
                     subject: formData.subject,
                     message: formData.message,
-                }),
-            });
+                },
+            ]);
 
-            if (response.ok) {
+            if (!error) {
+                // Send email notification after successful database save
+                await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        email: formData.email,
+                        subject: formData.subject,
+                        message: formData.message,
+                    }),
+                });
+
                 setStatus("success");
                 setFormData({ name: "", email: "", subject: "", message: "" });
                 setTimeout(() => setStatus("idle"), 5000);
             } else {
+                console.error("Supabase error:", error);
                 setStatus("error");
                 setTimeout(() => setStatus("idle"), 5000);
             }
         } catch (error) {
+            console.error("Submission error:", error);
             setStatus("error");
             setTimeout(() => setStatus("idle"), 5000);
         }

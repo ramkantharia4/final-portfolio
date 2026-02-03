@@ -21,7 +21,6 @@ import {
   Megaphone,
   TrendingUp,
   Users,
-  Download,
 } from "lucide-react";
 import DarkModeToggle from "./components/DarkModeToggle";
 import Testimonials from "./components/Testimonials";
@@ -178,14 +177,6 @@ export default function Portfolio() {
               >
                 Get In Touch
               </a>
-              <a
-                href="components/resumee.pdf"
-                download
-                className="px-8 py-4 border border-border rounded-full font-medium hover:bg-muted/50 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
-              >
-                <Download className="w-4 h-4" />
-                Resume
-              </a>
             </div>
 
             <div className="flex gap-4">
@@ -251,7 +242,7 @@ export default function Portfolio() {
             </p>
           </div>
 
-         <div className="space-y-0">
+          <div className="space-y-0">
             <ExperienceCard
               period="2026 — Present"
               role="Full Stack Developer"
@@ -266,7 +257,7 @@ export default function Portfolio() {
               period="2025"
               role="Founder & CEO"
               company="YODA"
-              companyUrl="https://yoda.agency"
+              companyUrl="https://yodadayo.vercel.app"
               description="Leading a full-service marketing agency that helps businesses grow their online presence through custom website development, Meta advertising campaigns, social media management, and comprehensive digital marketing strategies."
               skills={[
                 "Meta Ads",
@@ -278,7 +269,7 @@ export default function Portfolio() {
               ]}
               icon={<Megaphone className="w-5 h-5" />}
             />
-          
+
             <ExperienceCard
               period="2024 — 2025"
               role="App Developer"
@@ -430,7 +421,7 @@ export default function Portfolio() {
                 "Performance analytics",
               ]}
               image="/images/project-yoda.jpg"
-              projectUrl="https://yoda.agency"
+              projectUrl="https://yodadayo.vercel.app"
               align="left"
             />
 
